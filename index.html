@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Movie List</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="filters-wrapper">
+        <p class="filter">Список фильмов</p>
+        <p class="filter">2023</p>
+      </div>
+
+      <h1>Посмотреть</h1>
+
+      <div class="list-wrapper">
+        <div class="input-wrapper">
+          <input
+            type="text"
+            placeholder="Добавить фильм"
+            id=""
+            class="input-film"
+          />
+          <button class="button">
+            <img class="button-add-film" src="img/Vector.svg" alt="" />
+          </button>
+        </div>
+        <div>
+          <ol class="films-list-wrapper">
+            <li class="film-item active-film-item">
+              <div class="checkbox active-checkbox"></div>
+              <p class="title-film active-title-film">Остров проклятых</p>
+              <button class="close"><img src="img/close.svg" alt="" /></button>
+            </li>
+            <li class="film-item">
+              <div class="checkbox"></div>
+              <p class="title-film">Поймай меня, если сможешь</p>
+              <button class="close"><img src="img/close.svg" alt="" /></button>
+            </li>
+            <li class="film-item">
+              <div class="checkbox"></div>
+              <p class="title-film">Отступники</p>
+              <button class="close"><img src="img/close.svg" alt="" /></button>
+            </li>
+            <li class="film-item">
+              <div class="checkbox"></div>
+              <p class="title-film">Волк с Уолл-Стрит</p>
+              <button class="close"><img src="img/close.svg" alt="" /></button>
+            </li>
+            <li class="film-item">
+              <div class="checkbox"></div>
+              <p class="title-film">Начало</p>
+              <button class="close"><img src="img/close.svg" alt="" /></button>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

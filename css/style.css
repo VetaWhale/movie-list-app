@@ -1,0 +1,108 @@
+:root {
+  --accent-color: #6532f8;
+  --dark-grey: #232323;
+  --light-grey: #3a3939;
+  --background-color: #181818;
+  --font-color: #f3f6f9;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--font-color);
+  font-family: "Arimo", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.container {
+  margin: 80px auto;
+  width: 930px;
+}
+.filters-wrapper {
+  display: flex;
+  gap: 10px;
+}
+.filter {
+  padding: 10px 23px;
+  text-transform: uppercase;
+  border: 1px solid var(--accent-color);
+  background-color: var(--accent-color);
+  border-radius: 200px;
+  font-size: 15px;
+  line-height: 17px;
+}
+h1 {
+  margin-bottom: 35px;
+  font-size: 120px;
+  line-height: 138px;
+}
+.list-wrapper {
+  padding: 60px 70px;
+  background-color: var(--dark-grey);
+  border-radius: 20px;
+}
+::placeholder {
+  font-size: 30px;
+  line-height: 34px;
+  color: #F3F6F9;
+  opacity: 0.5;
+}
+.input-wrapper {
+}
+.input-film {
+    background-color: var(--dark-grey);
+    border-bottom: 2px solid #F3F6F9;
+    opacity: 0.5;
+    width: 420px;
+    height: 50px;
+}
+.button {
+  margin-left: 10px;
+  width: 62px;
+  height: 62px;
+  border: 1px solid var(--accent-color);
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+.button-add-film {
+  width: 30px;
+  height: 30px;
+  
+}
+.films-list-wrapper {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.film-item {
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  border: 1px solid var(--light-grey);
+  background-color: var(--light-grey);
+  border-radius: 10px;
+}
+.active-film-item {
+  opacity: 0.3;
+}
+.checkbox {
+  width: 19px;
+  height: 19px;
+  border: 1px solid #f3f6f9;
+  border-radius: 50%;
+}
+.active-checkbox {
+  background-color: var(--accent-color);
+}
+.title-film {
+  font-size: 20px;
+  line-height: 23px;
+}
+.active-title-film {
+  text-decoration: line-through;
+}
+.close {
+  background-color: var(--light-grey);
+}
