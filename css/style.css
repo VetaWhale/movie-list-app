@@ -43,19 +43,23 @@ h1 {
 ::placeholder {
   font-size: 30px;
   line-height: 34px;
-  color: #F3F6F9;
+  color: #f3f6f9;
   opacity: 0.5;
 }
 .input-wrapper {
 }
 .input-film {
-    background-color: var(--dark-grey);
-    border-bottom: 2px solid #F3F6F9;
-    opacity: 0.5;
-    width: 420px;
-    height: 50px;
+  background-color: var(--dark-grey);
+  border-bottom: 2px solid #f3f6f9;
+  opacity: 0.5;
+  width: 420px;
+  height: 50px;
+  font-size: 30px;
+  line-height: 34px;
+  color: #f3f6f9;
 }
-.button {
+.button-add {
+  appearance: none;
   margin-left: 10px;
   width: 62px;
   height: 62px;
@@ -66,7 +70,6 @@ h1 {
 .button-add-film {
   width: 30px;
   height: 30px;
-  
 }
 .films-list-wrapper {
   margin-top: 40px;
@@ -86,22 +89,27 @@ h1 {
 }
 .active-film-item {
   opacity: 0.3;
+  text-decoration: line-through;
 }
 .checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 19px;
   height: 19px;
   border: 1px solid #f3f6f9;
+  background-color: transparent;
   border-radius: 50%;
 }
-.active-checkbox {
+.checkbox:checked {
   background-color: var(--accent-color);
 }
 .title-film {
   font-size: 20px;
   line-height: 23px;
 }
-.active-title-film {
-  text-decoration: line-through;
+.close img {
+  pointer-events: none;
 }
 .close {
   background-color: var(--light-grey);
