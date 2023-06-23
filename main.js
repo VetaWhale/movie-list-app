@@ -4,13 +4,13 @@ const filmsList = document.querySelector('.films-list-wrapper');
 
 let films = [];
 
-// renderToLocalStorage();
-if (localStorage.getItem('films')) {
-    films = JSON.parse(localStorage.getItem('films'));
-    console.log(films)
-}
+renderToLocalStorage();
+// if (localStorage.getItem('films')) {
+//     films = JSON.parse(localStorage.getItem('films'));
+//     console.log(films)
+// }
 
-films.forEach(film => renderFilm(film));
+// films.forEach(film => renderFilm(film));
 
 buttonAddFilm.addEventListener('click', addFilm);
 filmsList.addEventListener('click', viewFilm);
@@ -97,10 +97,10 @@ function renderFilm(film) {
     filmsList.insertAdjacentHTML('beforeend', filmHTML);
 }
 
-// function renderToLocalStorage() {
-//    if (localStorage.getItem('films')) {
-//         films = JSON.parse(localStorage.getItem('films'));
-//     }
+function renderToLocalStorage() {
+   if (localStorage.getItem('films')) {
+        films = JSON.parse(localStorage.getItem('films'));
+    }
     
-//     films.forEach(film => renderFilm(film)); 
-// }
+    films.forEach(film => renderFilm(film)); 
+}
