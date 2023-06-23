@@ -101,7 +101,7 @@ h1 {
   background-color: transparent;
   border-radius: 50%;
 }
-.checkbox:checked {
+.active-checkbox {
   background-color: var(--accent-color);
 }
 .title-film {
