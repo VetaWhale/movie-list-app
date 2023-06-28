@@ -13,6 +13,9 @@ filmsList.addEventListener("click", deleteFilm);
 // генерировать фильм
 function addFilmToList() {
   const film = getValueFromUser();
+
+  if (film.length > 60) return;
+
   addFilm(film);
 
   clearInput();
@@ -24,6 +27,8 @@ function addFilmToList() {
 function getValueFromUser() {
   const filmFromUser = formNode.value;
 
+  console.log(filmFromUser.length)
+  
   return filmFromUser;
 }
 
