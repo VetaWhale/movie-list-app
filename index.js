@@ -6,7 +6,7 @@ let films = [];
 
 initFilms();
 
-buttonAddFilm.addEventListener("click", generateFilm);
+buttonAddFilm.addEventListener("click", addFilmToList);
 filmsList.addEventListener("click", markFilmViewed);
 filmsList.addEventListener("click", deleteFilm);
 
@@ -23,6 +23,7 @@ function addFilmToList() {
 // получить значение от пользователя
 function getValueFromUser() {
   const filmFromUser = formNode.value;
+
   return filmFromUser;
 }
 
