@@ -11,7 +11,7 @@ filmsList.addEventListener("click", markFilmViewed);
 filmsList.addEventListener("click", deleteFilm);
 
 // генерировать фильм
-function generateFilm() {
+function addFilmToList() {
   const film = getValueFromUser();
   addFilm(film);
 
@@ -104,12 +104,12 @@ function saveToLocalStorage() {
 // отрисовать фильм
 function renderFilm(film) {
   const classFilm = film.check ? "film-item active-film-item" : "film-item";
-  const classMarkFilm = film.check
+  const checkFilm = film.check
     ? "checkbox active-checkbox"
     : "checkbox";
 
   const filmHTML = `<li class="${classFilm}" id="${film.id}">
-    <input type="checkbox" name="" id="" class="${classMarkFilm}" data-action="check">
+    <input type="checkbox" name="" id="" class="${checkFilm}" data-action="check">
     <p class="title-film">${film.name}</p>
     <button class="close" data-action="delete"><img src="img/close.svg" alt="" /></button>
     </li>`;
