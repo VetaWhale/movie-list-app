@@ -4,13 +4,14 @@ const filmsList = document.querySelector(".films-list-wrapper");
 
 let films = [];
 
-renderToLocalStorage();
+initFilms();
 
-buttonAddFilm.addEventListener("click", createFilm);
-filmsList.addEventListener("click", viewFilm);
+buttonAddFilm.addEventListener("click", generateFilm);
+filmsList.addEventListener("click", markFilmViewed);
 filmsList.addEventListener("click", deleteFilm);
 
-function createFilm() {
+// генерировать фильм
+function generateFilm() {
   const film = getValueFromUser();
   addFilm(film);
 
@@ -19,11 +20,13 @@ function createFilm() {
   saveToLocalStorage();
 }
 
+// получить значение от пользователя
 function getValueFromUser() {
-  const film = formNode.value;
-  return film;
+  const filmFromUser = formNode.value;
+  return filmFromUser;
 }
 
+// добавить фильм
 function addFilm(film) {
   if (!film) return;
 
@@ -38,18 +41,23 @@ function addFilm(film) {
   renderFilm(newFilm);
 }
 
+// очистить поле ввода
 function clearInput() {
   formNode.value = "";
 }
 
+// удалить фильм 
 function deleteFilm(event) {
   if (event.target.dataset.action === "delete") {
+    // родительский элемент
     const parentNode = event.target.closest(".film-item");
 
-    const id = Number(parentNode.id);
+    // находим id элемента родителя
+    const idParentNode = Number(parentNode.id);
 
+    // находим индекс
     const index = films.findIndex(function (film) {
-      if (film.id === id) {
+      if (film.id === idParentNode) {
         return true;
       }
     });
@@ -62,13 +70,17 @@ function deleteFilm(event) {
   }
 }
 
-function viewFilm(event) {
+// отметить фильм просмотренным
+function markFilmViewed(event) {
   if (event.target.dataset.action === "check") {
+    // находим родительский элемент
     const parentNode = event.target.closest(".film-item");
-    const parentCheckNode = event.target.closest(".checkbox");
+    // находим кнопку отметки родителя
+    const markParentNode = event.target.closest(".checkbox");
 
     const id = Number(parentNode.id);
 
+    // фильм просмотрен
     const filmDone = films.find(function (film) {
       if (film.id === id) {
         return true;
@@ -78,24 +90,26 @@ function viewFilm(event) {
     filmDone.check = !filmDone.check;
 
     parentNode.classList.toggle("active-film-item");
-    parentCheckNode.classList.toggle("active-checkbox");
+    markParentNode.classList.toggle("active-checkbox");
 
     saveToLocalStorage();
   }
 }
 
+// сохранить в локальном хранилище
 function saveToLocalStorage() {
   localStorage.setItem("films", JSON.stringify(films));
 }
 
+// отрисовать фильм
 function renderFilm(film) {
   const classFilm = film.check ? "film-item active-film-item" : "film-item";
-  const classCheckboxFilm = film.check
+  const classMarkFilm = film.check
     ? "checkbox active-checkbox"
     : "checkbox";
 
   const filmHTML = `<li class="${classFilm}" id="${film.id}">
-    <input type="checkbox" name="" id="" class="${classCheckboxFilm}" data-action="check">
+    <input type="checkbox" name="" id="" class="${classMarkFilm}" data-action="check">
     <p class="title-film">${film.name}</p>
     <button class="close" data-action="delete"><img src="img/close.svg" alt="" /></button>
     </li>`;
@@ -103,7 +117,8 @@ function renderFilm(film) {
   filmsList.insertAdjacentHTML("beforeend", filmHTML);
 }
 
-function renderToLocalStorage() {
+// взять начальное значение из локального хранилища
+function initFilms() {
   if (localStorage.getItem("films")) {
     films = JSON.parse(localStorage.getItem("films"));
   }
