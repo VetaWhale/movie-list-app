@@ -26,8 +26,6 @@ function addFilmToList() {
 // получить значение от пользователя
 function getValueFromUser() {
   const filmFromUser = formNode.value;
-
-  console.log(filmFromUser.length)
   
   return filmFromUser;
 }
